@@ -1,0 +1,60 @@
+﻿﻿@{
+    int count = 0;
+    int count2 = 0;
+}
+@model List<ResultProductWithCategories>
+<div class="container-fluid menu bg-light py-6 my-6">
+    <div class="container">
+        <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
+            <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Menümuz</small>
+            <h1 class="display-5 mb-5">En İyi Lezzetler!</h1>
+        </div>
+        <div class="tab-class text-center">
+            <ul class="nav nav-pills d-inline-flex justify-content-center mb-5 wow bounceInUp" data-wow-delay="0.1s">
+                @foreach (var item in ViewBag.Categories as List<ResultCategoryDto>)
+                {
+                    count2++;
+                    <li class="nav-item p-2">
+                        <a class="d-flex py-2 mx-2 border border-primary bg-white rounded-pill @(count2==1?"active":"")" data-bs-toggle="pill" href="#tab-@item.CategoryID">
+                            <span class="text-dark" style="width: 150px;">@item.CategoryName</span>
+                        </a>
+                    </li>
+                }
+
+            </ul>
+            <div class="tab-content">
+                @foreach (var item in Model)
+                {
+                    count++;
+                    <div id="tab-@item.Category.CategoryID" class="tab-pane fade show p-0 @(count==1?"active":"")">
+                        <div class="row g-4">
+                            @foreach (var item2 in Model.Where(x => x.Category.CategoryName == item.Category.CategoryName))
+                            {
+
+                                <div class="col-lg-6 wow bounceInUp" data-wow-delay="0.1s">
+
+                                    <div class="menu-item d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded-circle " style="width:100px;height:100px" src="@item2.ImageUrl" alt="" />
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
+                                                <h4>@item2.ProductName</h4>
+                                                <h4 class="text-primary">@item2.Price ₺</h4><br />
+
+                                            </div>
+                                            <p class="mb-0">@item2.Description</p>
+                                            <br />
+                                            <p class="text-muted">@(item2.IsVegetarian == true ? "Vejetaryen" : "")</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

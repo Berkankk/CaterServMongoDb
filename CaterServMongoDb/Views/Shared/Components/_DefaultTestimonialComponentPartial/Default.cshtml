@@ -1,0 +1,42 @@
+﻿@model List<ResultTestimonialDto>
+
+<div class="container-fluid py-6">
+    <div class="container">
+        <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
+            <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Referanslarımız</small>
+            <h1 class="display-5 mb-5">Görüşüleriniz bizim için çok kıymetli</h1>
+        </div>
+        <div class="owl-carousel owl-theme testimonial-carousel testimonial-carousel-1 mb-4 wow bounceInUp" data-wow-delay="0.1s">
+            @foreach (var item in Model)
+            {
+                <div class="testimonial-item rounded bg-light">
+                    <div class="d-flex mb-3">
+                        <img src="@item.ImageUrl" class="img-fluid rounded-circle flex-shrink-0" alt="">
+                        <div class="position-absolute" style="top: 15px; right: 20px;">
+                            <i class="fa fa-quote-right fa-2x"></i>
+                        </div>
+                        <div class="ps-3 my-auto">
+                            <h4 class="mb-0">@item.Name</h4>
+                            <p class="m-0">@item.CommnetDate.ToShortDateString()</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="d-flex">
+                            @for (int i = 1; i <= item.Star; i++)
+                            {
+                                <i class="fas fa-star text-primary"></i>
+                            }
+                            @for (int i = 1; i <= 5 - item.Star; i++)
+                            {
+                                <i class="far fa-star  text-primary"></i>
+                            }
+                        </div>
+                        <p class="fs-5 m-0 pt-3">@item.Commet</p>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</div>

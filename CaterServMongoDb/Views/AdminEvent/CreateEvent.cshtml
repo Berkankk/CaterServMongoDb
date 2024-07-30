@@ -1,0 +1,29 @@
+﻿@model CreateEventDto
+@{
+    ViewData["Title"] = "CreateEvent";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4>Yeni Etkinlik Ekleme Sayfası</h4>
+            </div>
+            <div class="card-body">
+                <div class="basic-form text-muted">
+                    <form method="post" enctype="multipart/form-data">
+                        <label>Görsel</label>
+                        <input type="file" class="form-control" asp-for="File" />
+                        <br />
+                        <label>Kategori Seçiniz</label>
+                        <select asp-for="CategoryName" asp-items="@ViewBag.EventCategoryList" class="form-control"></select>
+                        <br />
+                        <button class="btn btn-outline-primary"><i class="fa fa-pencil"></i> Kaydet</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
