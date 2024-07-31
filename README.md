@@ -5,6 +5,8 @@
 ![3](https://github.com/user-attachments/assets/b429531c-3572-47d2-8f0e-7675606c4423)
 ![2](https://github.com/user-attachments/assets/ea69bf25-bb79-4c27-b2aa-c140195c374c)
 ![1](https://github.com/user-attachments/assets/96b291e9-acd5-47f1-9d8d-d229d3815715)
+
+
 MY YAZILIM EĞİTİM AKADEMİ DANIŞMANLIK bünyesinde devam ettiğimiz Full Stack Developer eğitimi kapsamında geliştirdiğim projem olan "CaterServ" projesini başarıyla tamamlamış bulunuyorum. Bu proje, catering hizmeti sunan firmalar için özelleştirilmiş bir web sitesi geliştirmeyi amaçladı ve bu süreçte birçok yenilikçi teknolojiyi bir araya getirdik.
 CaterServ Projesinde Öne Çıkan Özellikler:
 🔹 Projemizin temel yapı taşı olarak ASP.NET Core 8 kullanıldı.
